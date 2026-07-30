@@ -1,14 +1,4 @@
-// Filter pill interaction
-document.querySelectorAll(".pill").forEach((p) => {
-  p.addEventListener("click", () => {
-    document
-      .querySelectorAll(".pill")
-      .forEach((x) => x.classList.remove("active"));
-    p.classList.add("active");
-  });
-});
 
-// Mobile nav toggle
 const navbarEl = document.getElementById("navbar");
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
@@ -20,7 +10,6 @@ if (navbarEl && navToggle && navMenu) {
     navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
-  // Close the menu whenever a nav link or the CTA is tapped
   navMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navbarEl.classList.remove("nav-open");
@@ -29,7 +18,6 @@ if (navbarEl && navToggle && navMenu) {
     });
   });
 
-  // Close the menu if the viewport is resized back to desktop
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1024) {
       navbarEl.classList.remove("nav-open");
@@ -39,7 +27,7 @@ if (navbarEl && navToggle && navMenu) {
   });
 }
 
-// Navbar subtle shrink on scroll
+
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
   const nav = document.querySelector(".navbar");
@@ -49,7 +37,8 @@ window.addEventListener("scroll", () => {
     nav.style.padding = "14px 28px";
   }
 });
-// 3D monitor
+
+
 const wsShowcase = document.getElementById("workspaceShowcase");
 const wsScene = document.getElementById("wsScene");
 if (wsShowcase && wsScene) {
